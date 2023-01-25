@@ -1,3 +1,11 @@
+function dryLigadoDesligado() {
+    if (carro.ligado === true) {
+        console.log(`Carro ligado. Velocidade: ${carro.velocidade}.`);
+    } else {
+        console.log(`Carro desligado. Velocidade: ${carro.velocidade}.`);
+    }
+}
+
 const carro = {
     ligado: false,
     velocidade: 0,
@@ -6,7 +14,7 @@ const carro = {
             console.log("Este carro já está ligado.");
         } else {
             carro.ligado = true;
-            console.log(`Carro ligado. Velocidade: ${carro.velocidade}.`);
+            dryLigadoDesligado();
         }
     },
     desligar: () => {
@@ -15,7 +23,7 @@ const carro = {
         } else {
             carro.ligado = false;
             carro.velocidade = 0;
-            console.log(`Carro desligado. Velocidade: ${carro.velocidade}.`);
+            dryLigadoDesligado();
         }
     },
     acelerar: () => {
@@ -23,7 +31,7 @@ const carro = {
             console.log("Não é possível acelerar um carro desligado.");
         } else {
             carro.velocidade += 10;
-            console.log(`Carro ligado. Velocidade: ${carro.velocidade}.`);
+            dryLigadoDesligado();
         }
     },
     desacelerar: () => {
@@ -31,7 +39,7 @@ const carro = {
             console.log("Não é possível desacelerar um carro desligado.");
         } else {
             carro.velocidade -= 10;
-            console.log(`Carro ligado. Velocidade: ${carro.velocidade}.`);
+            dryLigadoDesligado();
         }
     }
 }
